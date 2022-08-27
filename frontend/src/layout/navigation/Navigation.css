@@ -1,0 +1,11 @@
+.navigation {
+    color: #dbe9fc;
+}
+
+#btn-close-white {
+    background-color: #212529;
+    border: solid 0.75px;
+    border-color: #fff;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
