@@ -1,0 +1,18 @@
+.title {
+    color: #212529;
+    text-align: center;
+    margin-top: 2.1rem;
+    left: 50%;
+    right: 50%;
+}
+
+.main-menu {
+    background-color: #adb5bd;
+    opacity: 70%;
+    text-align: center;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    padding: 2rem;
+}
