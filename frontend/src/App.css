@@ -13,8 +13,6 @@
     bottom: 0;
 }
 
-#profile-link {
-    text-decoration: none;
-    color: #495057;
-
+a:hover {
+    color: var(--bs-gray-600) !important;
 }

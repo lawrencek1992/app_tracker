@@ -1,3 +1,4 @@
 frontend/package-lock.json
 app_tracker/app_tracker/__pycache__/
 app_tracker/app_tracker/migrations/__pycache__/
+app_tracker/db.sqlite3

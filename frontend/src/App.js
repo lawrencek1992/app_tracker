@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
 import {
   BrowserRouter,
   Routes,
@@ -19,34 +18,41 @@ import { Todos } from "./views/Todos";
 
 function App() {
 
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  	const [loggedInUser, setLoggedInUser] = useState(null);
 
-  const root = ReactDOM.createRoot(
-    document.getElementById("root")
-  );
-
-  root.render (
-    <BrowserRouter>
-      <div className="App">
-        <Navigation />
-        {/* Should you condition on the logged in user here? When no user is logged in, you should really only have the ability to see the home page, login page, and create user page. */}
-          <Routes>
-            <Route exact path="/" element={<Main />} render={() => (
-                  <Main />
-                )}/>
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/create-account" element={<CreateAccount />} />
-            <Route exact path="/profile" element={<Profile />} />
-            <Route exact path="/applications" element={<Applications />} />
-            <Route exact path="/offers" element={<Offers />} />
-            <Route exact path="/todos" element={<Todos />} />     
-          </Routes>
-        <footer id="footer">
-              <a href="https://lawrencek1992.com" id="profile-link">Created by Kelly Lawrence</a>
-        </footer>
-      </div>
-    </BrowserRouter>
-  );
+	return(
+		<BrowserRouter>
+			<div className="App">
+				<Navigation loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
+					<Routes>
+						<Route exact path="/" element={
+							<Main loggedInUser={loggedInUser} />
+						} />
+						{loggedInUser && <Route exact path="/profile" element={
+							<Profile loggedInUser={loggedInUser} />
+						} />}
+						{loggedInUser && <Route exact path="/applications" element={
+							<Applications loggedInUser={loggedInUser} />
+						} />}
+						{loggedInUser && <Route exact path="/offers" element={
+							<Offers loggedInUser={loggedInUser} />
+						} />}
+						{loggedInUser && <Route exact path="/todos" element={
+							<Todos loggedInUser={loggedInUser} />
+						} />} 
+						{!loggedInUser && <Route exact path="/login" element={
+							<Login loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
+						} />}
+						{!loggedInUser && <Route exact path="/create-account" element={
+							<CreateAccount loggedInUser={loggedInUser} />
+						} />}   
+					</Routes>
+				<footer id="footer">
+				<a href="https://lawrencek1992.com" id="profile-link">Created by Kelly Lawrence</a>
+				</footer>
+			</div>
+		</BrowserRouter>
+	);
 }
 
 export default App;
