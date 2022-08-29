@@ -1,5 +1,17 @@
+@import "/Users/lawrencek1992/Desktop/app_tracker/frontend/node_modules/bootstrap/dist/css/bootstrap.css";
+
 .navigation {
     color: #dbe9fc;
+}
+
+#login-link {
+    position: absolute;
+    right: 23vw;
+}
+
+#create-account-link, #logout-link {
+    position: absolute;
+    right: 9vw;
 }
 
 #btn-close-white {

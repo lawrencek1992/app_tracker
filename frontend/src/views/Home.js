@@ -2,7 +2,9 @@ import React from "react";
 import { Title } from "../layout/elements/Title";
 import { MainMenu } from "../layout/elements/MainMenu";
 
-export const Main = () => {
+export const Main = ({
+    loggedInUser,
+}) => {
 
     const content = () => {
         return (
