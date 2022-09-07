@@ -16,3 +16,10 @@
 The url pattern for the endpoints in this app is: [http://127.0.0.1:8000/api/[endpoint]/](http://127.0.0.1:8000/api/[endpoint]/). You can see the urls in the urls.py file. 
 
 Instead of Django templates this project uses a React app. The frontend application needs to be run in a separate terminal session. Instructions can be found in the frontend directory.
+
+### Database
+
+You can inspect the database using the MySQL cli in the Django database shell:
+```
+python3 manage.py dbshell
+```
