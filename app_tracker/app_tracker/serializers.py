@@ -1,3 +1,5 @@
+# DOCS: https://www.django-rest-framework.org/api-guide/serializers/
+
 from rest_framework import serializers
 from app_tracker.models import (
     Application,
