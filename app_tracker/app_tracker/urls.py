@@ -42,6 +42,7 @@ router.register(r"applications", ApplicationViewSet, "applications")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
     path("api/", include((router.urls, "api"))),
     re_path(r"^(?P<path>.*)/$", AppTrackerView.as_view()),
     path("", AppTrackerView.as_view()),

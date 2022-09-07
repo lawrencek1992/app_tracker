@@ -11,7 +11,7 @@
 1) From the Django project directory, load the fixture: `python3 manage.py loaddata GeneralTestData`. 
 2) Run the server: `python3 manage.py runserver 0:8000`. 
 3) You can now see the Django admin app at: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
-4) You can log into the admin app with username: "test@gmail.com", and password: "test" if you have loaded the fixture. 
+4) You can log into the admin app with username: "test@test.com", and password: "app_tracker" if you have loaded the fixture. 
 
 The url pattern for the endpoints in this app is: [http://127.0.0.1:8000/api/[endpoint]/](http://127.0.0.1:8000/api/[endpoint]/). You can see the urls in the urls.py file. 
 
