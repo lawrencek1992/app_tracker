@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from djmoney.models.fields import MoneyField
 from phonenumber_field.modelfields import PhoneNumberField
@@ -36,7 +36,7 @@ class Application(models.Model):
     )
     second_interview = models.DateField(null=True, default=None)
     user = models.ForeignKey(
-        to=User, 
+        to="User", 
         null=False,
         db_index=True,
         related_name="application", 
@@ -112,7 +112,7 @@ class Offer(models.Model):
         max_length=32
     )
     user = models.ForeignKey(
-        to=User, related_name="offer", on_delete=models.PROTECT, null=False
+        to="User", related_name="offer", on_delete=models.PROTECT, null=False
     )
     vision = models.BooleanField(default=False)
 
@@ -135,10 +135,14 @@ class Todo(models.Model):
         null=True, max_length=450,
     )
     user = models.ForeignKey(
-        to=User, 
+        to="User", 
         related_name="todos", 
         on_delete=models.PROTECT, 
         null=False,
         db_index=True
     )
+    
+class User(AbstractUser):
+    # customizable if needed
+    pass
     
