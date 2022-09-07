@@ -23,3 +23,15 @@ You can inspect the database using the MySQL cli in the Django database shell:
 ```
 python3 manage.py dbshell
 ```
+
+To delete the database from the dbshell:
+```
+SHOW DATABASES;
+DROP DATABASE app_tracker;
+```
+
+To create/re-create the database from the dbshell. Remember to apply migrations after creating the database.
+```
+SHOW DATABASES;
+CREATE DATABASE mydatabase CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+```
