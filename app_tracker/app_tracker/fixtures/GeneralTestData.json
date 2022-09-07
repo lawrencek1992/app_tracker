@@ -1,0 +1,21 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+          "password": "pbkdf2_sha256$180000$X7dkjAZhsbBM$ikypaepzxm7NI/Z31UNjq2TXdTDgdETJ43B8oCtLocE=",
+          "last_login": "2021-03-29T14:51:20.722Z",
+          "is_superuser": true,
+          "username": "test@gmail.com",
+          "first_name": "Test",
+          "last_name": "McTesterson",
+          "email": "test@gmail.com",
+          "is_staff": true,
+          "is_active": true,
+          "date_joined": "2021-03-29T14:28:30.947Z",
+          "groups": [
+          ],
+          "user_permissions": []
+        }
+      }
+]
