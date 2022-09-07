@@ -13,7 +13,7 @@ class Application(models.Model):
         related_name="application",
     )
     date_applied = models.DateField(null=True)
-    first_interview = models.DateField(null=True, default=None)
+    first_interview = models.BooleanField(default=False)
     hiring_manager = models.ForeignKey(
         to="HiringManager", 
         null=True, 
@@ -34,7 +34,7 @@ class Application(models.Model):
         related_name="application",
         db_index=True,
     )
-    second_interview = models.DateField(null=True, default=None)
+    second_interview = models.BooleanField(default=False)
     user = models.ForeignKey(
         to=User, 
         null=False,
@@ -42,32 +42,6 @@ class Application(models.Model):
         related_name="application", 
         on_delete=models.PROTECT, 
     )
-    
-class Company(models.Model):
-    hiring_manager = models.OneToOneField(
-        to="HiringManager",
-        null=True, 
-        related_name="company", 
-        on_delete=models.CASCADE
-    )
-    name = models.CharField(
-        null=False, unique=True, db_index=True, max_length=32,
-    )
-    recruiter = models.ForeignKey(
-        to="Recruiter",
-        null=True, 
-        related_name="company", 
-        db_index=True, 
-        on_delete=models.SET_NULL
-    )
-    website = models.CharField(null=True, max_length=250)
-    
-class HiringManager(models.Model):
-    email = models.EmailField(null=True, unique=True)
-    name = models.CharField(
-        null=False, max_length=32, db_index=True, unique=True
-    )
-    phone_number = PhoneNumberField(null=True, unique=True, db_index=True)
 
 class Offer(models.Model):
     class OffersTypeChoices(models.TextChoices):
@@ -116,15 +90,6 @@ class Offer(models.Model):
     )
     vision = models.BooleanField(default=False)
 
-
-class Recruiter(models.Model):
-    email=models.EmailField(null=True, unique=True)
-    name = models.CharField(
-        null=False, max_length=32, db_index=True, unique=True
-    )
-    phone_number = PhoneNumberField(null=True, unique=True, db_index=True)
-    
-
 class Todo(models.Model):
     completed = models.BooleanField(default=False)
     date_created = models.DateField(null=False)
@@ -141,4 +106,38 @@ class Todo(models.Model):
         null=False,
         db_index=True
     )
+    
+
+class Company(models.Model):
+    hiring_manager = models.OneToOneField(
+        to="HiringManager",
+        null=True, 
+        related_name="company", 
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(
+        null=False, unique=True, db_index=True, max_length=32,
+    )
+    recruiter = models.ForeignKey(
+        to="Recruiter",
+        null=True, 
+        related_name="company", 
+        db_index=True, 
+        on_delete=models.SET_NULL
+    )
+    website = models.CharField(null=True, max_length=250)
+    
+class HiringManager(models.Model):
+    email = models.EmailField(null=True, unique=True)
+    name = models.CharField(
+        null=False, max_length=32, db_index=True, unique=True
+    )
+    phone_number = PhoneNumberField(null=True, unique=True, db_index=True)
+    
+class Recruiter(models.Model):
+    email=models.EmailField(null=True, unique=True)
+    name = models.CharField(
+        null=False, max_length=32, db_index=True, unique=True
+    )
+    phone_number = PhoneNumberField(null=True, unique=True, db_index=True)
     

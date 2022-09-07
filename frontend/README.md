@@ -1,4 +1,38 @@
-# Getting Started with Create React App
+# Frontend
+
+## A React.js frontend application to be used with the app_tracker Django app.
+
+### Install dependencies:
+
+This project uses npm. Install npm if it is not already installed on your machine. CSS Tricks has a handy guide on how to do this:
+[How To Install npm with nvm](https://css-tricks.com/how-to-install-npm-node-nvm/)
+
+_NOTE: You may alternatively use yarn or another package manager, but your results may vary._
+
+Using your package manager, install the frontend dependencies:
+```
+npm install
+```
+
+### Running the Frontend Application:
+
+Run `npm start` and create-react-app will start the react application in your web browser.
+You can view the application at [localhost:3000/](localhost:3000/). 
+Create-react-app supports hot reloading, and you should be able to see changes in real time in the browser as you edit code. 
+
+
+### React Developer Tools:
+
+It is suggested to download the React Developer Tools Google Chrome extension:
+[React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+
+
+
+
+
+-----------------------------------------------------------
+
+# GENERIC CREATE-REACT-APP README:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
