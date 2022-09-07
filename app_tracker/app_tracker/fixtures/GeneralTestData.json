@@ -1,0 +1,65 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+			"password": "pbkdf2_sha256$180000$X7dkjAZhsbBM$ikypaepzxm7NI/Z31UNjq2TXdTDgdETJ43B8oCtLocE=",
+			"last_login": "2021-03-29T14:51:20.722Z",
+			"is_superuser": true,
+			"username": "test@gmail.com",
+			"first_name": "Test",
+			"last_name": "McTesterson",
+			"email": "test@gmail.com",
+			"is_staff": true,
+			"is_active": true,
+			"date_joined": "2021-03-29T14:28:30.947Z",
+			"groups": [
+			],
+			"user_permissions": []
+        }
+	},
+	{
+		"model": "app_tracker.application",
+		"pk": 1,
+		"fields": {
+			"company": 1,
+			"date_applied": "2022-08-01",
+			"first_interview": "2022-08-14",
+			"hiring_manager": 1,
+			"job_description": "Software Developer I",
+			"notes": "Boulder company with the option to work fully remote",
+			"offer_extended": false,
+			"recruiter": 1,
+			"second_interview": null,
+			"user": 1
+		}
+	},
+	{
+		"model": "app_tracker.company",
+		"pk": 1,
+		"fields": {
+			"hiring_manager": 1,
+			"name": "Corp Corp",
+			"recruiter": 1,
+			"website": "corpcorp.org"
+		}
+	},
+	{
+		"model": "app_tracker.hiringmanager",
+		"pk": 1,
+		"fields": {
+			"email": "norm@corpcorp.org",
+			"name": "Norman Rockwell",
+			"phone_number": "+15555555555"
+		}
+	},
+	{
+		"model": "app_tracker.recruiter",
+		"pk": 1,
+		"fields": {
+			"email": "jessa@corpcorp.org",
+			"name": "Jessa Lynn",
+			"phone_number": "+12222222222"
+		}
+	}
+]
