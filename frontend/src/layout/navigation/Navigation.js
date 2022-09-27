@@ -51,7 +51,7 @@ export const Navigation = ({ loggedInUser, setLoggedInUser }) => {
                 variant="light"
                 id="create-account-link"
               >
-                Create Account
+                Create AccountSUCKS
               </Nav.Link>
             )}
             {loggedInUser && (
@@ -114,7 +114,7 @@ export const Navigation = ({ loggedInUser, setLoggedInUser }) => {
                      * this is where to add the modal code
                      */}
                     <NavDropdown.Item href="/create-user">
-                      Create Account SUCKMELONS
+                      Create Account
                     </NavDropdown.Item>
                   </Nav>
                 )}
