@@ -41,7 +41,7 @@ export const Navigation = ({ loggedInUser, setLoggedInUser }) => {
                 variant="light"
                 id="login-link"
               >
-                Login
+                Login "HOW THIS NOT CHANGE?"
               </Nav.Link>
             )}
             {!loggedInUser && (
@@ -51,7 +51,7 @@ export const Navigation = ({ loggedInUser, setLoggedInUser }) => {
                 variant="light"
                 id="create-account-link"
               >
-                Create AccountSUCKS
+                Create Account
               </Nav.Link>
             )}
             {loggedInUser && (
