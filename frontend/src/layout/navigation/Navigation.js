@@ -9,6 +9,7 @@ import {
   Form,
   Modal,
 } from "react-bootstrap";
+import ModalOpen from "../elements/ModalOpen";
 import "./Navigation.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -54,12 +55,13 @@ export const Navigation = ({ loggedInUser, setLoggedInUser }) => {
             )}
             {!loggedInUser && (
               <Nav.Link
-                href="create-user"
                 className="navigation"
                 variant="light"
                 id="create-account-link"
               >
-                Create Account
+                <Button variant="secondary" onClick={ModalOpen}>
+                  <ModalOpen modalContent="Create Account" />
+                </Button>
               </Nav.Link>
             )}
             {loggedInUser && (
