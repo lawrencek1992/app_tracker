@@ -8,6 +8,17 @@ const ModalOpen = ({ modalContent }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
+
+  const handleSave = () => {
+    setEmail(email);
+    setPassword(password);
+  };
+
+  const handleClear = () => {
+    setEmail("");
+    setPassword("");
+  };
+
   const handleShow = () => setShow(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -50,15 +61,28 @@ const ModalOpen = ({ modalContent }) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
             </Form.Group>
+            {email !== "" && password !== "" ? (
+              <Form.Text className="text-muted">
+                Email: {email} PassWord: {password}
+              </Form.Text>
+            ) : (
+              ""
+            )}
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleSave}>
             Save Changes
+          </Button>
+          <Button variant="warning" onClick={handleClear}>
+            Clear Changes
           </Button>
         </Modal.Footer>
       </Modal>
