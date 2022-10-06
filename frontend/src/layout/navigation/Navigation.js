@@ -59,9 +59,12 @@ export const Navigation = ({ loggedInUser, setLoggedInUser }) => {
                 variant="light"
                 id="create-account-link"
               >
-                <Button variant="secondary" onClick={ModalOpen}>
-                  <ModalOpen modalContent="Create Account" />
-                </Button>
+                {/* <Button variant="outline-light" onClick={ModalOpen}> */}
+                <ModalOpen
+                  className="navigation"
+                  modalContent="Create Account"
+                />
+                {/* </Button> */}
               </Nav.Link>
             )}
             {loggedInUser && (
